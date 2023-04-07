@@ -62,18 +62,17 @@ const InternetLine = styled.div`
 
 const ActiveToggler = styled.div`
   ${tw` flex items-center justify-center gap-5`}
+  >span:nth-child(2) {
+    ${tw`bg-white`}
+  }
 
   > span {
     ${tw`bg-body rounded-full h-3 w-3`}
   }
 `;
+
+const InternetSpan = styled.span``;
 export const Internet = () => {
-  const [active, setActive] = useState();
-
-  // console.log("active", active);
-
-  useEffect(() => {}, []);
-
   return (
     <InternetParent>
       <Container>
@@ -110,16 +109,22 @@ export const Internet = () => {
               ({ title, description, activestate, id }, index) => {
                 const handleActiveState = () => {
                   if (id === index) {
-                    setActive(!activestate);
+                    // setActive(!activestate);
+                    setActive(active);
+                    // console.log("id", id, "index", index);
+                  } else {
+                    console.log("false");
+                    setActive(!active);
                   }
-
-                  console.log("Testing Our Active State!!!!", active);
+                  // console.log("Testing Our Active State!!!!", active);
                 };
 
                 return (
                   <InternetTabContainer key={index}>
                     <div onClick={handleActiveState}>
-                      <InternetLine bg={active && "#E6DDFE"}></InternetLine>
+                      <InternetLine
+                        bg={activestate && "#E6DDFE"}
+                      ></InternetLine>
                       <div className="justify-end">
                         <InternetTabHeading>{title}</InternetTabHeading>
                         <InternetTabText>{description}</InternetTabText>
@@ -133,9 +138,9 @@ export const Internet = () => {
         </InternetParentController>
       </Container>
       <ActiveToggler>
-        <span></span>
-        <span></span>
-        <span></span>
+        <InternetSpan />
+        <InternetSpan />
+        <InternetSpan />
       </ActiveToggler>
     </InternetParent>
   );

@@ -7,7 +7,7 @@ import { footerleftlinkdata, footerrightdata } from "../../../utils/data";
 import { Button } from "../UI/Button";
 
 const FooterContainer = styled.div`
-  ${tw`pt-32 bg-primary font-satoshi text-body`}
+  ${tw`pt-10 lg:pt-32 bg-primary font-satoshi text-body`}
 `;
 const LineI = styled.div``;
 const Line2 = styled.div``;
@@ -39,6 +39,10 @@ const FooterSectionController = styled.div`
   ${tw`pt-8 flex justify-between items-center gap-32`}
 `;
 
+const CopyRight = styled.div`
+  ${tw`pt-8`}
+`;
+
 export const Footer = () => {
   return (
     <FooterContainer>
@@ -55,7 +59,8 @@ export const Footer = () => {
               <img src="/assets/img/Line.png" alt="" />
             </Line2>
           </div>
-          <FooterSectionController className="pt-0">
+
+          <FooterSectionController>
             <FooterLeftLinks className="fourth">
               <FooterMenuLinks>
                 {footerleftlinkdata?.map((link, index) => {
@@ -89,9 +94,9 @@ export const Footer = () => {
             </FooterRightLinks>
           </FooterSectionController>
 
-          <div className="py-12">
+          <CopyRight>
             <h2>Copyright &copy; 2023 by Seun </h2>
-          </div>
+          </CopyRight>
         </FooterGridContainer>
       </Container>
     </FooterContainer>
