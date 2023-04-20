@@ -23,18 +23,15 @@ const ButtonStyles = styled.button`
 
     &:hover{
       ${tw`opacity-50 transition-all duration-700 ease-in-out delay-300`}
-    }
+    };
 
 @media screen and (max-width:960px){
-width:40%;
-height:7vh;
+padding:13px 35px;
 font-size:12px;
 }
 
 @media screen and (max-width:500px){
-  width:39%;
-height:6vh;
-  font-size:10px;
+  font-size:13px;
   
   }
 `;

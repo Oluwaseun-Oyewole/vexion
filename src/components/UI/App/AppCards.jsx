@@ -9,8 +9,8 @@ const AppCardParent = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  height: 600px;
-  max-width: 1100px;
+  max-width: 67%;
+  margin: 50px auto;
 
   > div {
     border-radius: 12.5px;
@@ -61,14 +61,21 @@ const AppCardParent = styled.div`
 
   grid-template-areas: "first second third" "first fourth third" "first fourth fifth" "first fourth fifth";
 
-  @media screen and (max-width: 960px) {
-    max-width: 700px;
+  @media screen and (max-width: 1024px) {
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
+  @media screen and (max-width: 960px) {
+    max-width: 85%;
+    margin-right: auto;
+    margin-left: auto;
     height: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
       "
-    first first first ."
+    . first first . "
       " second second third third "
       "fourth fourth fifth fifth";
 
@@ -83,9 +90,7 @@ const AppCardParent = styled.div`
   @media screen and (max-width: 500px) {
     grid-template-columns: 1fr;
     gap: 30px;
-    width: 92%;
-    margin-right: auto;
-    margin-left: auto;
+    max-width: 85%;
     grid-template-areas:
       "first"
       "second"
@@ -111,7 +116,7 @@ const AppCardParent = styled.div`
     }
 
     > div:first-child {
-      min-height: 280px;
+      height: 300px;
 
       > Button {
         margin-top: 15px;
@@ -121,7 +126,7 @@ const AppCardParent = styled.div`
 `;
 
 const AppCardHeader = styled.h4`
-  ${tw`text-white text-base md:text-xl font-bold pb-2 `}
+  ${tw`text-white text-base md:text-lg font-bold pb-2 `}
 `;
 
 const AppCardParagraph = styled.p`

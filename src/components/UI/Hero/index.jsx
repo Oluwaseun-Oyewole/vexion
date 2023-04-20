@@ -6,14 +6,14 @@ import { Button } from "../Button";
 import { Tilt } from "../Tilt";
 
 const HeroParent = styled.div`
-  ${tw`bg-primary text-white flex items-center pt-6 md:pt-14 lg:pt-16 justify-center flex-col font-satoshi text-center w-full`}
+  ${tw`bg-primary text-white flex items-center pt-6 lg:pt-16 justify-center flex-col font-satoshi text-center w-full`}
 `;
 
 const HeaderContent = styled.div`
   ${tw`text-center`}
 `;
 const HeaderContainer = styled.div`
-  ${tw` uppercase font-bold tracking-wide md:tracking-widest `}
+  ${tw`uppercase font-bold tracking-wide md:tracking-widest `}
 `;
 const HeroHeading = styled.h1`
   ${tw`text-2xl md:text-4xl lg:text-6xl lg:flex items-center justify-center`}
@@ -102,7 +102,7 @@ export const Hero = () => {
           <img
             src="/assets/img/Phones.png"
             alt=""
-            className="w-[85%] mt-8 md:mt-20 lg:mt-14 md:w-[450px] lg:w-[750px]"
+            className="w-[85%] mt-5 lg:mt-14 md:w-[450px] lg:w-[750px]"
           />
         </HeroImage>
       </Tilt>

@@ -7,52 +7,116 @@ import { vexiconAppData } from "../../../../utils/data";
 import { Tilt } from "../Tilt";
 
 const InternetParent = styled.div`
-  ${tw`bg-primary text-white `}
+  ${tw`bg-primary text-white lg:py-10 max-w-[1350px] mx-auto`}
 `;
 
 const InternetContent = styled.div`
-  ${tw`flex flex-col justify-between `}
+  ${tw`lg:flex flex-col justify-between`}
 `;
-const InternetContentParent = styled.div``;
+const InternetContentParent = styled.div`
+  @media screen and (max-width: 768px) {
+    ${tw`flex flex-col items-center`}
+  }
+`;
 const InternetParentController = styled.div`
-  ${tw`flex items-center justify-between font-satoshi pb-20`};
+  ${tw`flex items-center justify-between font-satoshi pb-10 lg:pb-10`};
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Quicksand;
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: Quicksand;
+  }
 `;
 const InternetHeading = styled.h2`
-  ${tw`text-6xl py-3 uppercase font-medium font-Archivo w-[80%]`}
+  ${tw`text-3xl md:text-4xl text-center lg:text-left lg:text-6xl py-3 uppercase font-medium font-Archivo lg:w-[80%]`}
 `;
 const InternetHeadingApp = styled.h3`
-  ${tw`text-xl `}
+  ${tw`text-center lg:text-left md:text-xl`}
 `;
 const InternetParagraph = styled.p`
-  ${tw`text-body py-5 w-[40%]`}
+  ${tw`text-body lg:py-5 text-center lg:text-left lg:w-[40%]`}
+
+  @media screen and (max-width: 1024px) {
+    ${tw`w-[90%]`}
+  }
 `;
+
 const InternetImage = styled.img`
-  ${tw`ml-10 w-[600px] relative left-20`}
+  ${tw`mt-5 md:mt-12 lg:mt-0 lg:ml-10 w-[300px] md:w-[450px] lg:w-[600px] relative left-10 lg:left-20`}
+
+  @media screen and (max-width: 350px) {
+    width: 250px;
+  }
 `;
 const ImageContainer = styled.div`
-  ${tw`relative flex items-center justify-between bg-internet-img bg-no-repeat bg-cover bg-top`}
+  ${tw`relative md:flex items-center justify-between md:bg-internet-img bg-no-repeat bg-cover bg-top`};
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
 `;
 const InternetTab = styled.div`
-  ${tw`self-end cursor-pointer`}
+  ${tw` pt-10 xl:pt-0 self-center lg:self-end cursor-pointer`};
+
+  @media screen and (max-width: 1024px) {
+    ${tw`grid grid-cols-2 w-full`}
+  }
+
+  @media screen and (max-width: 600px) {
+    ${tw`block`}
+  }
 `;
 
 const InternetTabContainer = styled.div`
-  ${tw`py-4 flex items-center justify-end`}
+  ${tw`py-4 flex items-center lg:justify-end`}
 
   > div:first-child {
-    ${tw`py-4 flex w-[60%] gap-5`}
+    ${tw`py-4 flex w-[60%] items-center lg:items-start gap-5`}
+  }
+
+  @media screen and (max-width: 1024px) {
+    ${tw`flex items-center justify-center`}
+
+    > div:first-child {
+      ${tw`pt-5 w-[80%]`}
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+
+    > div:first-child {
+      ${tw`w-[85%]`}
+    }
   }
 `;
 
 const InternetTabHeading = styled.h3`
   ${tw`text-body`}
+  @media screen and (max-width:1024px) {
+    color: #e6ddfe;
+  }
 `;
 const InternetTabText = styled.p`
-  ${tw`text-body text-[12px] w-[70%]`}
+  ${tw`text-body text-[12px] lg:w-[70%]`}
 `;
 
 const ButtonContainer = styled.div`
-  ${tw`self-end`}
+  ${tw`py-5 md:py-0 md:hidden lg:flex lg:self-end`}
+
+  @media screen and (max-width: 1024px) {
+    ${tw`w-full text-center pb-5`}
+  }
 `;
 
 const InternetLine = styled.div`
@@ -61,7 +125,7 @@ const InternetLine = styled.div`
 `;
 
 const ActiveToggler = styled.div`
-  ${tw` flex items-center justify-center gap-5`}
+  ${tw`-mt-20 xl:mt-0 hidden lg:flex items-center justify-center gap-5`}
   >span:nth-child(2) {
     ${tw`bg-white`}
   }
@@ -109,14 +173,10 @@ export const Internet = () => {
               ({ title, description, activestate, id }, index) => {
                 const handleActiveState = () => {
                   if (id === index) {
-                    // setActive(!activestate);
                     setActive(active);
-                    // console.log("id", id, "index", index);
                   } else {
-                    console.log("false");
                     setActive(!active);
                   }
-                  // console.log("Testing Our Active State!!!!", active);
                 };
 
                 return (
@@ -125,7 +185,7 @@ export const Internet = () => {
                       <InternetLine
                         bg={activestate && "#E6DDFE"}
                       ></InternetLine>
-                      <div className="justify-end">
+                      <div className="lg:justify-end">
                         <InternetTabHeading>{title}</InternetTabHeading>
                         <InternetTabText>{description}</InternetTabText>
                       </div>
@@ -137,6 +197,7 @@ export const Internet = () => {
           </InternetTab>
         </InternetParentController>
       </Container>
+
       <ActiveToggler>
         <InternetSpan />
         <InternetSpan />

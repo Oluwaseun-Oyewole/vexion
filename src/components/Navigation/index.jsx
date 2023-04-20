@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { NavLinksData } from "../../../utils/data";
 import styled from "styled-components";
+
 import tw from "twin.macro";
 import { Button } from "../UI/Button";
 import { Container } from "../StyledElements";
@@ -16,7 +17,7 @@ const AppNav = styled.div`
   background: ${({ scrollNavbar }) =>
     scrollNavbar ? "rgba(0, 0, 0, 0.1)" : ""};
   backdrop-filter: blur(10px);
-  height: 100px;
+  height: 75px;
   position: sticky;
   top: 0px;
   z-index: 99999;
@@ -38,7 +39,7 @@ const NavMenu = styled.ul`
   ${tw`flex items-center gap-8 list-none`}
 
   @media screen and (max-width:960px) {
-    ${tw`pt-12 flex-col gap-0 items-center absolute bg-primary w-full top-32  transition-all ease-in-out duration-500`}
+    ${tw`pt-12 flex-col gap-0 items-center absolute bg-primary w-full top-[70px]  transition-all ease-in-out duration-500`}
     left: ${({ click }) => (click ? 0 : "-100%")};
     height: 100vh;
   }
@@ -46,7 +47,7 @@ const NavMenu = styled.ul`
 const NavItems = styled.li`
   ${tw`tracking-wide`}
 
-  @media screen and (max-width:960px) {
+  @media screen and (max-width: 960px) {
     ${tw`h-[80px]`}
   }
 `;
@@ -57,18 +58,23 @@ const NavLinks = styled(NavLink)`
 
 const NavButtonContainer = styled.div`
   ${tw`flex items-center gap-4`}
-  @media screen and (max-width:960px) {
-    ${tw`flex-col gap-8 items-center absolute top-[520px] w-full transition-all ease-in-out duration-500 bg-primary pb-5 `}
+
+  @media screen and (max-width:1024px) {
+    ${tw`px-10`}
+  }
+
+  @media screen and (max-width: 960px) {
+    ${tw`flex-col gap-8 items-center absolute top-[440px] w-full transition-all ease-in-out duration-500 bg-primary pb-5`}
     left: ${({ click }) => (click ? 0 : "-100%")};
   }
 `;
 
 const DropDownContainer = styled.div`
-  ${tw`bg-primary text-body bg-gray-500 h-[100px] w-[200px] absolute top-14 w-[100%] flex flex-col items-start justify-center gap-5`};
+  ${tw`bg-primary text-body  h-[100px] w-[200px] absolute top-14 flex flex-col items-start justify-center gap-5`};
 `;
 
 const MobileIcons = styled.div`
-  ${tw`block lg:hidden text-3xl cursor-pointer mr-4`}
+  ${tw`block lg:hidden text-2xl md:text-3xl cursor-pointer mr-4`}
 `;
 
 export const Navigation = () => {
@@ -106,7 +112,11 @@ export const Navigation = () => {
         <AppNavContainer click={click}>
           <AppNavLogo onClick={homeToggler}>
             <NavLink to="/">
-              <img src="/assets/img/Logo.png" alt="" />
+              <img
+                src="/assets/img/Logo.png"
+                alt=""
+                className="w-[120px] md:w-[150px]"
+              />
             </NavLink>
           </AppNavLogo>
 

@@ -10,9 +10,9 @@ function App() {
     <>
       <BrowserRouter>
         <Layout>
-          {navigationData?.map(({ path, element }) => {
+          {navigationData?.map(({ path, element }, index) => {
             return (
-              <Routes>
+              <Routes key={index}>
                 <Route path={path} element={element} />
               </Routes>
             );

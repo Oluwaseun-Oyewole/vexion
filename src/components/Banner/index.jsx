@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import { Container } from "../StyledElements";
 
 const BannerParent = styled.div`
-  ${tw` py-14 md:py-24 bg-primary text-body flex flex-col items-center justify-center text-center w-full`}
+  ${tw` py-14 md:py-20  lg:py-24 bg-primary text-body flex flex-col items-center justify-center text-center w-full`}
 `;
 
 const BannerHeader = styled.h2`

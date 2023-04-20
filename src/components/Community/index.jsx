@@ -5,10 +5,10 @@ import tw from "twin.macro";
 import { Button } from "../UI/Button";
 
 const CommunityContainer = styled.div`
-  ${tw`pt-28 bg-primary text-white flex items-center justify-between`}
+  ${tw`pt-14 md:pt-16 lg:pt-28 bg-primary text-white flex items-center justify-between`}
 `;
 const CommunityContent = styled.div`
-  ${tw`text-center flex-col lg:flex-row flex lg:items-center justify-center lg:justify-between w-[350px] md:w-[600px] lg:w-[800px] h-[140px] lg:h-[190px] p-5 lg:p-7 bg-frame-2 bg-no-repeat bg-contain bg-center gap-3 md:gap-5 lg:gap-0`}
+  ${tw`text-center flex-col lg:flex-row flex lg:items-center justify-center lg:justify-between w-[320px] md:w-[600px] lg:w-[800px] h-[140px] lg:h-[190px] p-5 lg:p-7 bg-frame-2 bg-no-repeat bg-contain bg-center gap-3 md:gap-5 lg:gap-0`}
 `;
 
 const CommunityTitle = styled.h2`

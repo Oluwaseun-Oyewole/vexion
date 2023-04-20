@@ -7,12 +7,12 @@ import { footerleftlinkdata, footerrightdata } from "../../../utils/data";
 import { Button } from "../UI/Button";
 
 const FooterContainer = styled.div`
-  ${tw`pt-10 lg:pt-32 bg-primary font-satoshi text-body`}
+  ${tw`pt-10 md:pt-16 lg:pt-20 bg-primary font-satoshi text-body`}
 `;
 const LineI = styled.div``;
 const Line2 = styled.div``;
 const Circula = styled.div`
-  ${tw`flex items-center justify-start -mt-10`}
+  ${tw`hidden xl:flex items-center justify-start -mt-10`}
   >img {
     width: 100px;
   }
@@ -20,27 +20,33 @@ const Circula = styled.div`
 
 const FooterLeftLinks = styled.div``;
 const FooterRightLinks = styled.div``;
-const FooterButtonContainer = styled.div``;
+const FooterButtonContainer = styled.div`
+  ${tw`py-5 lg:py-0 flex  md:hidden xl:flex items-center justify-center`}
+`;
 const FooterMenuLinks = styled.ul`
-  ${tw`list-none flex gap-10`};
+  ${tw`lg:text-base text-sm list-none flex gap-3 md:gap-5 xl:gap-10 justify-center lg:justify-start`};
 `;
 const FooterMenuItems = styled.li`
   ${tw`hover:text-white transition-all duration-500 ease-in-out`}
 `;
 const FooterRightMenu = styled.ul`
-  ${tw`list-none flex gap-10`}
+  ${tw`text-sm lg:text-base list-none text-center lg:text-left flex gap-3  md:gap-5 xl:gap-10 md:mt-0 justify-center lg:justify-start`}
 `;
 
 const FooterGridContainer = styled.div`
-  ${tw`flex flex-col items-center justify-between`}
+  ${tw`text-center lg:text-start lg:flex flex-col items-center justify-between `}
+  @media screen and (max-width:768px) {
+    max-width: 95%;
+    margin: auto;
+  }
 `;
 
 const FooterSectionController = styled.div`
-  ${tw`pt-8 flex justify-between items-center gap-32`}
+  ${tw`md:flex lg:flex-row justify-center lg:justify-between items-center gap-16 lg:gap-32`}
 `;
 
 const CopyRight = styled.div`
-  ${tw`pt-8`}
+  ${tw`text-sm lg:text-base pt-4 pb-10`}
 `;
 
 export const Footer = () => {
@@ -48,7 +54,7 @@ export const Footer = () => {
     <FooterContainer>
       <Container>
         <FooterGridContainer>
-          <div className="flex gap-10">
+          <div className="hidden xl:flex gap-10">
             <LineI className="first">
               <img src="/assets/img/Line.png" alt="" />
             </LineI>

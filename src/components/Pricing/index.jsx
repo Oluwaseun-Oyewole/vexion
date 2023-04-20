@@ -8,17 +8,14 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { Tilt } from "../UI/Tilt";
 
 const PricingContainer = styled.div`
-  ${tw`pt-24 bg-primary text-white  flex justify-center items-center flex-col font-Quicksand `}
-
-  @media screen and (max-width: 960px) {
-    display: block;
-  }
+  ${tw`pt-14 lg:pt-24 bg-primary text-white font-Quicksand`}
 `;
+
 const PricingHeader = styled.h2`
-  ${tw`text-xl text-linear uppercase font-medium`}
+  ${tw`text-base md:text-xl text-linear uppercase font-medium`}
 `;
 const PricingTitle = styled.h1`
-  ${tw`text-7xl py-2 uppercase font-medium`}
+  ${tw`text-3xl md:text-7xl py-2 uppercase font-medium`}
 `;
 const PricingParagraph = styled.p`
   ${tw`text-body font-medium text-sm`}
@@ -27,12 +24,19 @@ const PricingContent = styled.div`
   ${tw`text-center`}
 `;
 const PricingCards = styled.div`
-  ${tw`pt-5 md:pt-20 md:flex items-center`}
+  ${tw`md:pt-10 lg:pt-20 w-full flex items-center justify-center`};
+  @media screen and (max-width: 768px) {
+    ${tw`grid grid-cols-2 items-center justify-center`}
+  }
+
+  @media screen and (max-width: 500px) {
+    ${tw`grid-cols-1`}
+  }
 `;
 const PricingCard = styled.div`
   background: ${({ cover }) =>
     cover &&
-    "  linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0 05) 100%)"};
+    "linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0 05) 100%)"};
   box-shadow: ${({ cover }) =>
     cover && "inset 0px 10px 25px rgba(230, 221, 254, 0.2)"};
   border-radius: ${({ cover }) => cover && "24px"};
@@ -40,9 +44,11 @@ const PricingCard = styled.div`
 
   @media screen and (max-width: 960px) {
     text-align: center;
-    width: 100%;
-    padding: 20px 10px;
-    margin-top: 50px;
+    self-align: center;
+    max-width: 88%;
+    margin: 0 auto;
+    padding: 13px 10px;
+    margin-top: 20px;
 
     background: linear-gradient(
       360deg,
@@ -52,22 +58,28 @@ const PricingCard = styled.div`
     box-shadow: inset 0px 10px 25px rgba(230, 221, 254, 0.4);
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 500px) {
+    max-width: 85%;
+    margin: 20px auto;
+    padding: 15px 10px;
+  }
 `;
 const PricingHead = styled.h4`
-  ${tw`text-[18px] font-medium uppercase`}
+  ${tw`md:text-[18px] font-medium uppercase`}
 `;
 const PriceTitle = styled.h3`
-  ${tw`text-body text-[16px]`}
+  ${tw`md:text-body text-xs md:text-[16px]`}
 `;
 const PricingPrice = styled.h3`
-  ${tw`text-5xl font-bold font-satoshi py-8 `}
+  ${tw`text-2xl md:text-5xl font-bold font-satoshi py-3 md:py-8`}
 `;
 const PricingRenewal = styled.h3`
-  ${tw`py-6 text-sm text-body font-medium border-b-[1px] border-body border-solid`}
+  ${tw`py-3 md:py-6 text-sm text-body font-medium border-b-[1px] border-body border-solid`}
 `;
 const PricingStats = styled.div``;
 const PricingDevice = styled.p`
-  ${tw`mt-5`}
+  ${tw`md:mt-5 text-sm md:text-base`}
 `;
 const PricingSpeed = styled.p`
   color: ${({ colorChoice }) => colorChoice && "#7F7F90"};
@@ -76,25 +88,17 @@ const PricingStatistics = styled.p`
   color: ${({ colorChoice }) => colorChoice && "#7F7F90"};
 `;
 const PriceContainer = styled.div`
-  ${tw`flex items-center gap-3 justify-center md:justify-start`}
+  ${tw`mt-2 md:mt-0 flex items-center gap-3 justify-center lg:justify-start`}
 `;
 
 const PricingSpanIcon = styled.span`
-  ${tw`pt-5`}
+  ${tw`md:pt-5`}
 `;
 
 const PricingSpiralBackground = styled.div`
-  ${tw` hidden bg-spiral lg:block h-[300px]  w-full bg-no-repeat bg-cover bg-center -mt-24`};
-
-  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-  //   url("/public/assets/img/Image (2).png");
-  // height: 300px;
+  ${tw`hidden bg-spiral md:block md:h-[300px]  w-full bg-no-repeat bg-cover bg-center -mt-24`};
 `;
 
-// background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-// url("/public/assets/img/Image (2).png");
-
-const PricingSpiralBackgroundImage = styled.img``;
 export const Pricing = () => {
   const [buttonShadow, setShadowButton] = useState(true);
   return (
@@ -110,7 +114,7 @@ export const Pricing = () => {
           <PricingCards>
             {pricingdata?.map((pricing, index) => {
               return (
-                <Tilt>
+                <Tilt key={index}>
                   <PricingCard key={index} cover={pricing.cover}>
                     <div className="">
                       <PricingHead>{pricing.header}</PricingHead>
@@ -131,7 +135,7 @@ export const Pricing = () => {
                     <PricingRenewal>{pricing.renewal}</PricingRenewal>
                     {pricing.stats?.map((stat, index) => {
                       return (
-                        <PriceContainer>
+                        <PriceContainer key={index}>
                           <PricingSpanIcon>
                             <AiOutlineCheck />
                           </PricingSpanIcon>

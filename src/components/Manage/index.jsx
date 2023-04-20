@@ -7,7 +7,7 @@ import { Tilt } from "../UI/Tilt";
 import { Button } from "../UI/Button";
 
 const ManagementParent = styled.div`
-  ${tw`lg:pt-40  bg-primary text-white font-Quicksand`}
+  ${tw`lg:pt-20 bg-primary text-white font-Quicksand`}
 `;
 
 const ManageContent = styled.div`
@@ -17,6 +17,8 @@ const ManageContent = styled.div`
   }
 
   @media screen and (max-width: 960px) {
+    max-width: 85%;
+    margin: auto;
     > div:last-child {
       padding-top: 80px;
     }
@@ -25,6 +27,7 @@ const ManageContent = styled.div`
   @media screen and (max-width: 600px) {
     align-items: center;
     text-align: center;
+    max-width: 97%;
 
     > div:last-child {
       padding-top: 70px;
@@ -38,7 +41,7 @@ const ManageTitle = styled.h2`
   ${tw`uppercase py-1 lg:py-2 text-2xl lg:text-4xl font-bold tracking-wide`}
 `;
 const ManageDescriptions = styled.p`
-  ${tw`text-sm lg:text-base text-body`}
+  ${tw`text-[13px] lg:text-base text-body`}
 `;
 const ManageData = styled.div`
   ${tw` md:w-[80%] lg:w-[40%] xl:w-[25%]`}
