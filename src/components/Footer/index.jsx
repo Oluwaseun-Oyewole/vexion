@@ -46,7 +46,7 @@ const FooterSectionController = styled.div`
 `;
 
 const CopyRight = styled.div`
-  ${tw`text-sm lg:text-base pt-4 pb-10`}
+  ${tw`text-sm pt-4 pb-10`}
 `;
 
 export const Footer = () => {

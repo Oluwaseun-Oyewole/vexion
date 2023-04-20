@@ -8,20 +8,23 @@ const CommunityContainer = styled.div`
   ${tw`pt-14 md:pt-16 lg:pt-28 bg-primary text-white flex items-center justify-between`}
 `;
 const CommunityContent = styled.div`
-  ${tw`text-center flex-col lg:flex-row flex lg:items-center justify-center lg:justify-between w-[320px] md:w-[600px] lg:w-[800px] h-[140px] lg:h-[190px] p-5 lg:p-7 bg-frame-2 bg-no-repeat bg-contain bg-center gap-3 md:gap-5 lg:gap-0`}
+  ${tw`text-center flex-col lg:flex-row flex lg:items-center justify-center lg:justify-between w-[320px] md:w-[600px] lg:w-[800px] h-[140px] lg:h-[190px] p-5 lg:p-7 bg-no-repeat bg-contain bg-center gap-3 md:gap-5 lg:gap-0`};
+  background-image: url("/src/img/Frame (8).png");
 `;
 
 const CommunityTitle = styled.h2`
   ${tw`md:text-xl lg:text-3xl font-bold font-Quicksand uppercase `}
 `;
-const CommunityContentContainer = styled.div``;
+const CommunityContentContainer = styled.div`
+  background-image: url("/src/img/Image (1).png");
+`;
 const CommunityButton = styled.div``;
 
 export const Community = () => {
   return (
     <CommunityContainer>
       <Container>
-        <CommunityContentContainer className="bg-frame-1 rounded-xl">
+        <CommunityContentContainer className="rounded-xl">
           <CommunityContent>
             <CommunityTitle>Join Our Community</CommunityTitle>
             <CommunityButton>

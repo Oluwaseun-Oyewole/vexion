@@ -57,8 +57,12 @@ const InternetImage = styled.img`
   }
 `;
 const ImageContainer = styled.div`
-  ${tw`relative md:flex items-center justify-between md:bg-internet-img bg-no-repeat bg-cover bg-top`};
+  ${tw`relative md:flex items-center justify-between  bg-no-repeat bg-cover bg-top`};
 
+  @media screen and (min-width: 768px) {
+  background-image: url("/src/img/Vector (1).png)
+  }
+  
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
