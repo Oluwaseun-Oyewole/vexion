@@ -97,7 +97,7 @@ const PricingSpanIcon = styled.span`
 
 const PricingSpiralBackground = styled.div`
   ${tw`hidden  md:block md:h-[300px]  w-full bg-no-repeat bg-cover bg-center -mt-24`};
-  background-image: url("/src/img/Image (2).png");
+  background-image: url("/assets/img/Image (2).png");
 `;
 
 export const Pricing = () => {

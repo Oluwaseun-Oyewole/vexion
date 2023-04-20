@@ -9,14 +9,14 @@ const CommunityContainer = styled.div`
 `;
 const CommunityContent = styled.div`
   ${tw`text-center flex-col lg:flex-row flex lg:items-center justify-center lg:justify-between w-[320px] md:w-[600px] lg:w-[800px] h-[140px] lg:h-[190px] p-5 lg:p-7 bg-no-repeat bg-contain bg-center gap-3 md:gap-5 lg:gap-0`};
-  background-image: url("/src/img/Frame (8).png");
+  background-image: url("/assets/img/Frame (8).png");
 `;
 
 const CommunityTitle = styled.h2`
   ${tw`md:text-xl lg:text-3xl font-bold font-Quicksand uppercase `}
 `;
 const CommunityContentContainer = styled.div`
-  background-image: url("/src/img/Image (1).png");
+  background-image: url("/assets/img/Image (1).png");
 `;
 const CommunityButton = styled.div``;
 
