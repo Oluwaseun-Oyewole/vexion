@@ -16,7 +16,7 @@ module.exports = {
       backgroundImage: {
         "frame-1": "url('/src//img/Image (1).png')",
         "frame-2": "url('/src/img/Frame (8).png')",
-        spiral: "url('/src/img/image (2).png')",
+        "spiral-bg": "url('/src/img/image (2).png')",
         "internet-img": "url('/src/img/Vector (1).png')",
       },
     },

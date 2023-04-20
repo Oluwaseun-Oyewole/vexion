@@ -96,7 +96,7 @@ const PricingSpanIcon = styled.span`
 `;
 
 const PricingSpiralBackground = styled.div`
-  ${tw`hidden bg-spiral md:block md:h-[300px]  w-full bg-no-repeat bg-cover bg-center -mt-24`};
+  ${tw`hidden bg-spiral-bg md:block md:h-[300px]  w-full bg-no-repeat bg-cover bg-center -mt-24`};
 `;
 
 export const Pricing = () => {
